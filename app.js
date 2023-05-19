@@ -7,8 +7,8 @@ const mailchimp = require("@mailchimp/mailchimp_marketing");
 const app = express();
 
 mailchimp.setConfig({
-    apiKey: "55f320e3f5b676ad062e37c5639cfcd4-us8",
-    server: "us8"
+    apiKey: "*********************************",//hidding API key
+    server: "***"
 });
 
 /* This line is required for express to serve a 
@@ -44,11 +44,11 @@ app.post("/", function(req, res){
 
     const jsonData = JSON.stringify(data);
     
-    const url = "https://us8.api.mailchimp.com/3.0/lists/2c9e906e25";
+    const url = "https://us8.api.mailchimp.com/3.0/lists/**********"; //hiding MailChimp list ID
 
     const options = {
         method: "POST", 
-        auth: "Fatima1:55f320e3f5b676ad062e37c5639cfcd4-us8"
+        auth: "Fatima1:************************************"                       
     }
 
     const request = https.request(url, options, function(response){
@@ -77,9 +77,3 @@ app.post("/failure", function(req, res){
 app.listen(process.env.PORT || 3000, function(){
     console.log("Server is running on port 3000");
 })
-
-//API Key
-// 55f320e3f5b676ad062e37c5639cfcd4-us8
-
-//List id
-//2c9e906e25
