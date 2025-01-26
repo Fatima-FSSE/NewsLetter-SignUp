@@ -17,7 +17,7 @@ static page which will pull from the pulic folder.
 Remember that the path will be relative to public, 
 so in the html file, we'd call the stylesheet 
 via "css/styles.css" */
-app.use(express.static("public")); 
+app.use(express.static(__dirname + '/public')); 
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/", function(req, res){
